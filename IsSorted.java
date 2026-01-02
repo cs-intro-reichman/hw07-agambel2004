@@ -7,8 +7,15 @@ public class IsSorted {
 
     // Helper recursive function
     private static boolean isSorted(int[] a, int i) {
-        //// Replace the following statement with your code
-        return false; 
+    // Base case
+    if (a == null || a.length <= 1 || i == a.length - 1) {
+        return true;
+    }
+    if (a[i] > a[i + 1]) {
+        return false;
+    }
+    // Recrusive step    
+    return isSorted(a, i + 1);
     }
 
     public static void main(String[] args) {
